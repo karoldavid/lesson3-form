@@ -11,7 +11,10 @@
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
     <link rel="import" href="bower_components/gold-email-input/gold-email-input.html">
+    <link rel="import" href="bower_components/gold-phone-input/gold-phone-input.html">
     <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/iron-form/iron-form.html">
 </head>
 <body class="fullbleed vertical layout">
     <paper-header-panel class="flex">
@@ -28,7 +31,7 @@
 
         <h3>Your Name and Demographic Information</h3>
 
-        <form>
+        <form is="iron-form" id="form" method="post" action="/form/handler">
             <label for="name">
                 <paper-input label="your first and last name"></paper-input>
             </label>
@@ -39,7 +42,12 @@
             <label for="email">
                 <gold-email-input label="your email address"></gold-email-input>
             </label>
+            <label for="phone">
+                <gold-phone-input label="your phone number"></gold-phone-input>
+            </label>
         </form>
+
+        <paper-button raised onclick="submitForm()">Submit</paper-button>
 
     <!--    <h3>Your Shipping Address</h3>
 
