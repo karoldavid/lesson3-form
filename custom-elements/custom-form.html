@@ -1,0 +1,15 @@
+<template>
+    <form is="iron-form" id="form" method="post" action="/form/handler" label="Purchase">
+        <label for="name">
+            <paper-input label="your first and last name"></paper-input>
+        </label>
+        <label for="age">
+            <paper-input label="your age" type="number" min="18" max="99" id="age"></label>
+        <label for="email">
+            <gold-email-input label="your email address"></gold-email-input>
+        </label>
+        <label for="phone">
+            <gold-phone-input label="your phone number"></gold-phone-input>
+        </label>
+    </form>
+</template>

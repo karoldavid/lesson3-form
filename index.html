@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quiz - One Big, Ugly Form</title>
+    <title>Lesson 3 Form Quiz</title>
     <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
     <!--<link rel="stylesheet" href="css/styles.css">-->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="custom-elements/custom-form.html">
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
@@ -25,26 +26,11 @@
         <div>Content</div>
     </paper-header-panel>
 
-  <!--  <section class="progress-bar">
-        Seems like this could be a good place for a progress bar...
-    </section> -->
     <paper-progress value="10"></paper-progress>
 
     <h3>Your Name and Demographic Information</h3>
 
-    <form is="iron-form" id="form" method="post" action="/form/handler" label="Purchase">
-        <label for="name">
-            <paper-input label="your first and last name"></paper-input>
-        </label>
-        <label for="age">
-            <paper-input label="your age" type="number" min="18" max="99" id="age"></label>
-        <label for="email">
-            <gold-email-input label="your email address"></gold-email-input>
-        </label>
-        <label for="phone">
-            <gold-phone-input label="your phone number"></gold-phone-input>
-        </label>
-    </form>
+    <div id="container"></div>
 
     <paper-button raised onclick="submitForm()">Submit</paper-button>
 
@@ -163,6 +149,15 @@
             alert("All of your information was valid, right? I'll just go ahead and assume that it is ;)\n\nThanks for your submission!");
         };*/
 
+    </script>
+    <script>
+	    var link = document.querySelector('link[rel="import"]');
+
+	    // Clone the <template> in the import.
+	    var template = link.import.querySelector('template');
+	    var clone = document.importNode(template.content, true);
+
+	    document.querySelector('#container').appendChild(clone);
     </script>
 
 </body>
