@@ -15,139 +15,43 @@
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/iron-form/iron-form.html">
     <link rel="import" href="bower_components/paper-progress/paper-progress.html">
-</head>
+    <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/gold-cc-input/gold-cc-input.html">
+    <link rel="import" href="bower_components/gold-cc-expiration-input/gold-cc-expiration-input.html">
+    <link rel="import" href="bower_components/gold-cc-cvc-input/gold-cc-cvc-input.html">
 <body class="fullbleed vertical layout">
     <paper-header-panel class="flex">
         <paper-toolbar>
-            <div>Event Ticket Service</div>
+            <div>Event Ticket System | Checkout Form</div>
         </paper-toolbar>
         <div>Content</div>
     </paper-header-panel>
 
     <paper-progress value="10"></paper-progress>
 
-    <h3>Your Name and Demographic Information</h3>
+    <h2>My Order</h2>
+
+    <h3>Sent my Order to</h3>
 
     <div id="container"></div>
 
+
+    <h3>My Credit Card</h3>
+
+    <form is="iron-form" id="form" method="post" action="/form/handler" label="credit-card">
+        <label for="credit-card">
+            <gold-cc-input label="CC"></gold-cc-input>
+        </label>
+        <label>
+            <gold-cc-cvc-input></gold-cc-cvc-input>
+        </label>
+        <label>
+            <gold-cc-expiration-input value="11/15"></gold-cc-expiration-input>
+        </label>
+    </form>
+
     <paper-button raised onclick="submitForm()">Submit</paper-button>
 
-    <!--    <h3>Your Shipping Address</h3>
-
-        <form>
-            <label>Name<input type="text"></label>
-            <label>Company<input type="text"></label>
-            <label>Address Line 1<input type="text"></label>
-            <label>Address Line 2<input type="text"></label>
-            <label>City<input type="text"></label>
-            <label>State/Province<input type="text"></label>
-            <label>Postal Code<input type="text"></label>
-            <label>Country<input type="text"></label>
-        </form> -->
-
-    <!--    <h3>Your Credit Card Information</h3>
-
-        <div class="cc-warning"><em>Note: don't enter any actual credit card info!</em></div>
-
-        <form>
-            <label>Credit Card Number
-            <input type="text">
-            </label>
-            <label>Credit Card Type
-            <select name="cc">
-            <option>Visa</option>
-	        <option>American Express</option>
-	        <option>Mastercard</option>
-	        <option>Discover</option>
-	        </select>
-            </label>
-		    <label>Expiration Date
-		      <input type="text" placeholder="MM"><input type="text" placeholder="YY">
-		    </label>
-		    <label>CVV
-		      <input type="number">
-		    </label>
-        </form>
-
-        <h3>Your Billing Address</h3>
-
-        <form>
-            <label>First Name
-            <input type="text">
-		    </label>
-		    <label>Middle Initial
-		      <input type="text">
-		    </label>
-		    <label>Last Name
-		      <input type="text">
-		    </label>
-		    <label>Company
-		      <input type="text">
-		    </label>
-		    <label>Address Line 1
-		      <input type="text">
-		    </label>
-		    <label>Address Line 2
-		      <input type="text">
-		    </label>
-		    <label>City
-		      <input type="text">
-		    </label>
-		    <label>State/Province
-		      <input type="text">
-		    </label>
-		    <label>Postal Code
-		      <input type="text">
-		    </label>
-		    <label>Country
-		      <input type="text">
-		    </label>
-		</form>
-
-    <section class="order-review">
-	    <h3>Your Order</h3>
-	    <table class="your-order">
-		    <tr class="headings">
-		        <td>Product</td>
-		        <td>Quantity</td>
-		        <td>Price</td>
-		        <td>Total</td>
-		    </tr>
-		    <tr>
-		        <td>Game Console 2015</td>
-		        <td>1</td>
-		        <td>$500.00</td>
-		        <td>$500.00</td>
-		    </tr>
-		    <tr>
-		        <td>Platformer Bros 3D</td>
-		        <td>1</td>
-		        <td>$50.00</td>
-		        <td>$50.00</td>
-		    </tr>
-		    <tr class="total">
-		        <td>Total</td>
-		        <td>$550.00</td>
-		    </tr>
-		</table>
-
-	    <form>
-		    <label class="check-correct">Is your order correct?
-		      <input type="checkbox">
-		    </label>
-		    <label for="mailinglist">Send me emails<input id="mailinglist" type="checkbox" checked></label>
-		    <input id="submit" type="submit">
-		</form>
-    </section> -->
-
-    <script>
-
-     /*   var submit = document.querySelector('#submit');
-        submit.onclick = function () {
-            alert("All of your information was valid, right? I'll just go ahead and assume that it is ;)\n\nThanks for your submission!");
-        };*/
-
-    </script>
     <script>
 	    var link = document.querySelector('link[rel="import"]');
 
